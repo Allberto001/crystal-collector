@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" >
+
+    <title>Item Collector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" >
+    <script src="assets/js/game.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>All You Can Eat!</h1>
+    </header>
+    <div class="instructions">
+        <h2>Instructions</h2>
+        <p>You have a random number to begin with.</p><br>
+        <p>Their are four items to choose from. By clicking one it will add a certain
+            amount of points to your score.
+        </p><br>
+        <p>If you are able to match the number that was given to you at the beginning of the game, you win.
+            You lose if your score passes that number.
+        </p><br>
+        <p>The value of the each individual item is hidden but once clicked upon you should get an idea of what it is.</p><br>
+        <p>The value of each item is random and will change everytime you start a new game.</p>
+       
+    </div>
+    
+        <div class="match-number">
+            <h3>SCORE</h3>
+            <div id="randnumber"></div>
+        </div>  
+
+        <div class="win">
+            <h3>WIN:</h3>
+            <div id="winpoints">0</div>
+        </div>
+
+        <div class="lose">
+            <h3>LOSE:</h3>
+            <div id="losepoints">0</div>
+        </div>
+   
+    <div class="images">
+        <img id="burger" src="assets/images/burger.png" alt="burger"> 
+        <img id="taco" src="assets/images/taco.jpg" alt="taco"> 
+        <img id="chicken" src="assets/images/chicken.jpeg" alt="chicken"> 
+        <img id="hotdog" src="assets/images/hotdog.jpg" alt="hotdog">
+    </div>
+
+    <div class="fifth-section">
+            <h3>YOUR SCORE</h3>
+        <div id="your-score"></div>
+    </div>
+   <script>
+       var food = {
+    burger:{
+        value:0
+    },
+    taco:{
+        value:0
+    },
+    chicken:{
+        value:0
+    },
+    hotdog:{
+        value:0
+    }
+
+}
+
+var yourscore = 0;
+var matchscore = 0;
+var wincount = 0;
+var losecount= 0;
+
+//functions
+var getrandom = function(min, max){
+     return Math.floor(Math.random() *(max - min  + 1) + min);
+}
+
+var startgame = function() {
+    //start your score at 0
+     yourscore = 0;
+    // get you random number between 20 and 100 for the score you need to match
+     matchscore = getrandom(20, 100);
+    // same as above but setting it to the options of food we have
+    food.burger.value = getrandom(1, 15);
+    food.taco.value = getrandom(1, 15);
+    food.chicken.value = getrandom(1, 15);
+    food.hotdog.value = getrandom(1, 15);
+
+    //display to your html
+    $("#your-score").html(yourscore); 
+    $("#randnumber").html(matchscore);
+
+    }
+
+
+var setvalue = function(food){
+   
+    // will change our score depending on whihc food you chose
+    yourscore = yourscore + food.value;
+    $("#your-score").html(yourscore);
+    win();
+}
+
+var win = function(){
+// this will stop the game and alert you if you won or lost
+if(yourscore > matchscore){
+    alert("You Lose");
+
+    //add to your lose
+    losecount++;
+    $("#losepoints").html(losecount);
+
+    //restart game
+    startgame();
+}
+else if(yourscore == matchscore){
+    alert("You Win");
+
+    //add to your wins
+    wincount++;
+    $("#winpoints").html(wincount);
+
+    //restart game
+    startgame();
+}
+}
+startgame();
+
+$("#burger").click(function(){
+    setvalue(food.burger);
+});
+$("#taco").click(function(){
+    setvalue(food.taco);
+});
+$("#chicken").click(function(){
+    setvalue(food.chicken);
+});
+$("#hotdog").click(function(){
+    setvalue(food.hotdog);
+});
+
+   </script>
+</body>
+</html>
