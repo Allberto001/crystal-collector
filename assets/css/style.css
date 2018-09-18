@@ -7,6 +7,7 @@ body{
     font-size: 40px;
     color: white;
     text-align: center;
+    padding: 10px;
 }
 h2{
     background-color: red;
@@ -14,6 +15,7 @@ h2{
     font-size: 30px;
     color: white;
     text-align: center;
+    text-decoration: underline;
 }
 .instructions{
     background-color: red;
