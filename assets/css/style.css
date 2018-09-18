@@ -1,0 +1,91 @@
+body{
+    background-image:url("../images/background.jpg");
+}
+.header{
+    background-color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
+h2{
+    background-color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+.instructions{
+    background-color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    width:30%;
+    margin-top:10px;
+    margin-left: 450px;
+    padding: 5px;
+}
+.match-number{
+    background-color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    width:15%;
+    margin-left: 400px;
+    padding: 5px;
+    display: inline-block;
+}
+.win{
+    background-color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    width:10%;
+    margin-top:10px;
+    padding: 5px;
+    display: inline-block;
+}
+.lose{
+background-color: red;
+font-family: 'Times New Roman', Times, serif;
+font-size: 30px;
+color: white;
+text-align: center;
+width:10%;
+margin-top:10px;
+padding: 5px;
+display: inline-block;
+}
+.images{
+    text-align: center;
+    margin: 10px;
+}
+#burger{
+    width: 10%;
+    margin-right: 10px;
+}
+#taco{
+    width: 10%;
+    margin-right: 10px;
+}
+#chicken{
+    width: 10%;
+    margin-right: 10px;
+}
+#hotdog{
+    width: 10%;
+}
+.fifth-section{
+    background-color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    width:30%;
+    margin-top:10px;
+    margin-left: 450px;
+    padding: 5px;
+}
